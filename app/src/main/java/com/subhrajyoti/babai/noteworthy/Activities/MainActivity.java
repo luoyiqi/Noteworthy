@@ -26,8 +26,8 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.crashlytics.android.Crashlytics;
 import com.subhrajyoti.babai.noteworthy.Adapters.RecyclerAdapter;
-import com.subhrajyoti.babai.noteworthy.DB.DBTrashController;
 import com.subhrajyoti.babai.noteworthy.Listeners.RecyclerTouchListener;
 import com.subhrajyoti.babai.noteworthy.Listeners.SwipeableListener;
 import com.subhrajyoti.babai.noteworthy.Models.Note;
@@ -42,6 +42,7 @@ import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import io.fabric.sdk.android.Fabric;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, SearchView.OnQueryTextListener, MainView {
 
@@ -66,7 +67,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Bind(R.id.desc_text)
     EditText descText;
     private LinearLayoutManager linearLayoutManager;
-    private DBTrashController dbTrashController;
     private SearchView searchView;
     private ArrayList<Note> filteredModelList;
     private RecyclerAdapter recyclerAdapter;
@@ -77,6 +77,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_main);
 
         //setup toolbar

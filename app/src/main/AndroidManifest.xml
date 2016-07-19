@@ -31,8 +31,12 @@
             android:name="com.subhrajyoti.babai.noteworthy.Activities.BackupActivity"
             android:parentActivityName="com.subhrajyoti.babai.noteworthy.Activities.MainActivity" />
         <activity android:name="com.subhrajyoti.babai.noteworthy.Activities.TrashActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:parentActivityName="com.subhrajyoti.babai.noteworthy.Activities.MainActivity"/>
+            android:parentActivityName="com.subhrajyoti.babai.noteworthy.Activities.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="8126bd5083b1a6a133f92daedd8ae01344b1a182" />
     </application>
 
 </manifest>
