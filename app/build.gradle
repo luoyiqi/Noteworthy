@@ -64,6 +64,7 @@ dependencies {
     compile('com.crashlytics.sdk.android:crashlytics:2.6.0@aar') {
         transitive = true;
     }
+    compile 'com.google.firebase:firebase-core:9.2.1'
 
 
 }
